@@ -1,0 +1,8 @@
+iqi = 0
+detector = "Detector XYZ, Mode zyx"
+isrb = 240.0
+csa = 0.05
+lag = 0.3
+snrn = 820.0
+smtr = 125.0
+mtl = 90.0

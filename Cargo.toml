@@ -1,0 +1,29 @@
+[package]
+name = "spiderchart"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hide_console = "0.2"
+rfd = "0.15.3" # File Dialogs
+rust-ini = "0.21.1"
+native-dialog = "0.9.0"
+windows = { version = "0.61.3", features = [
+    "Win32_Graphics_Gdi", # Font resources
+    "Win32_UI_WindowsAndMessaging", # App Style
+] }
+widestring = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+
+[build-dependencies]
+bindgen = "0.72.0"
+copy_to_output = "2.2"
+
+[profile.release]
+opt-level = 3         # "3" for maximum speed "z" or "s" for size optimization
+lto = true              # Enable Link Time Optimization
+codegen-units = 1       # Better optimization, slower compile
+panic = "abort"         # Smaller binary, faster runtime
+strip = true            # Remove debug symbols (Rust 1.60+)

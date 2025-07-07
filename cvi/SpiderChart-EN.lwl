@@ -1,0 +1,295 @@
+[LWCVI Language Resource File]
+Version = 200
+Magic = -1395807027
+CharSet = -1
+
+[PANEL]
+Flags = "@e"
+
+[PANEL_DETECTOR_STRING]
+Type = 3
+Flags = "Efee"
+Label = "Detector"
+
+[PANEL_IQI_TYPE]
+Type = 8
+NumItemLabels = 4
+NumItemValues = 0
+Flags = "EfeeEeec"
+Label = "IQI Type"
+
+[PANEL_ISRB]
+Type = 2
+Flags = "Dee"
+
+[PANEL_CSA]
+Type = 2
+Flags = "Dee"
+
+[PANEL_LAG]
+Type = 2
+Flags = "Dee"
+
+[PANEL_SNRN]
+Type = 2
+Flags = "Dee"
+
+[PANEL_SMTR]
+Type = 2
+Flags = "Dee"
+
+[PANEL_ISOMTL]
+Type = 2
+Flags = "Dee"
+
+[PANEL_THEME]
+Type = 8
+NumItemLabels = 5
+NumItemValues = 0
+Flags = "EfefEfff@f"
+Label = "Theme"
+ItemLabel_0 = "Light(Default)"
+ItemLabel_1 = "Dark"
+ItemLabel_2 = "Light with Axis"
+ItemLabel_3 = "Dark with Axis"
+ItemLabel_4 = "Pride at Work"
+
+[PANEL_QUITBUTTON]
+Type = 2
+Flags = "Dfe"
+Label = "__QUIT"
+
+[PANEL_ISRB_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_CSA_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_LAG_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_SNRN_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_SMTR_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_CANVAS]
+Type = 2
+Flags = "Dee"
+
+[PANEL_SAVE_AS_BUTTON]
+Type = 2
+Flags = "Dfe"
+Label = "__Save Spider Chart Values as TOML File..."
+
+[PANEL_EXPORT_BUTTON]
+Type = 2
+Flags = "Dfe"
+Label = "__Export Spider Chart to PNG File..."
+
+[PANEL_LOAD_BUTTON]
+Type = 2
+Flags = "Dfe"
+Label = "__Load Spider Chart from TOML File..."
+
+[PANEL_ISOMTL_CLASS]
+Type = 3
+Flags = "Eeee"
+
+[PANEL_LISTBOX]
+Type = 8
+NumItemLabels = 0
+NumItemValues = 0
+Flags = "@f0"
+Label = "Favorites"
+
+[PANEL_LANG]
+Type = 8
+NumItemLabels = 2
+NumItemValues = 0
+Flags = "Efee00"
+Label = "Language"
+
+[PANEL_PATTERNSWITCH]
+Type = 5
+Flags = "Eeee@e"
+
+[PANEL_TIMER]
+Type = 2
+Flags = "Dee"
+
+[PANEL_RESETTEXTMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Are you sure you want to reset Spider Chart values to defaults?"
+
+[PANEL_RESETTITLEMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Reset Spider Chart"
+
+[PANEL_SAVETOMLMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Save Spider Chart As TOML File..."
+
+[PANEL_LOADTOMLMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Load Spider Chart from TOML File..."
+
+[PANEL_EXPORTPNGMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Export Spider Chart As PNG Image..."
+
+[PANEL_AD]
+Type = 4
+Flags = "Dee"
+
+[PANEL_2]
+Flags = "@f"
+Title = "Quality Numbers for Different Materials"
+
+[PANEL_2_TABLE]
+Type = 9
+Cols = 24
+Rows = 26
+Flags Line0001 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0002 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0003 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0004 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0005 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0006 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0007 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0008 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0009 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0010 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0011 = "EeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeeeEeee"
+Flags Line0012 = "EeeeEeeeEeeeEeeeEeee@e"
+
+[PANEL_2_TABLE_HEADERS]
+Type = 9
+Cols = 4
+Rows = 0
+Flags = "EeeeEeee"
+
+[PANELABOUT]
+Flags = "@f"
+Title = "About Spider Chart Diagram"
+
+[PANELABOUT_CLOSEABOUT]
+Type = 2
+Flags = "Dee"
+
+[PANELABOUT_PICTURE]
+Type = 2
+Flags = "Dee"
+
+[PANELABOUT_ABOUTMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Spider Chart Diagram, \nwritten entirely on Rust Programming Language"
+
+[PANELABOUT_HYPERLINK]
+Type = 4
+Flags = "Dee"
+
+[MENUBAR_FILE]
+Flags = "@f"
+Name = "__File"
+
+[MENUBAR_FILE_OPEN]
+Flags = "@f"
+Name = "__Open..."
+
+[MENUBAR_FILE_SAVE]
+Flags = "@f"
+Name = "__Save..."
+
+[MENUBAR_FILE_EXPORT]
+Flags = "@f"
+Name = "__Export..."
+
+[MENUBAR_FILE_PRINT]
+Flags = "@f"
+Name = "Print..."
+
+[MENUBAR_FILE_QUIT]
+Flags = "@f"
+Name = "__Quit"
+
+[MENUBAR_EDIT]
+Flags = "@f"
+Name = "__Edit"
+
+[MENUBAR_EDIT_COPY]
+Flags = "@f"
+Name = "Copy to Clipboard"
+
+[MENUBAR_EDIT_RESET]
+Flags = "@f"
+Name = "__Reset values to defaults..."
+
+[MENUBAR_VIEW]
+Flags = "@f"
+Name = "__View"
+
+[MENUBAR_VIEW_THEME]
+Flags = "@f"
+Name = "__Theme"
+
+[MENUBAR_VIEW_THEME_LIGHT]
+Flags = "@f"
+Name = "Light (Default)"
+
+[MENUBAR_VIEW_THEME_DARK]
+Flags = "@f"
+Name = "Dark"
+
+[MENUBAR_VIEW_THEME_LIGHT_AXIS]
+Flags = "@f"
+Name = "Light with Axis"
+
+[MENUBAR_VIEW_THEME_DARK_AXIS]
+Flags = "@f"
+Name = "Dark with Axis"
+
+[MENUBAR_VIEW_THEME_PRIDE]
+Flags = "@f"
+Name = "Pride at Work"
+
+[MENUBAR_VIEW_LANGUAGE]
+Flags = "@f"
+Name = "__Language"
+
+[MENUBAR_VIEW_LANGUAGE_ENGLISH]
+Flags = "@f"
+Name = "English"
+
+[MENUBAR_VIEW_LANGUAGE_GERMAN]
+Flags = "@f"
+Name = "German"
+
+[MENUBAR_HELP]
+Flags = "@f"
+Name = "__Help"
+
+[MENUBAR_HELP_HELP]
+Flags = "@f"
+Name = "Contents..."
+
+[MENUBAR_HELP_QUALITY]
+Flags = "@f"
+Name = "Q__uality Numbers..."
+
+[MENUBAR_HELP_ABOUT]
+Flags = "@f"
+Name = "__About"
+

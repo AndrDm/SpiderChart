@@ -1,0 +1,17 @@
+[OPTIONS]
+Title=SpiderChart Hilfe
+Default topic=SpiderChart-DE.html
+Contents file=SpiderChart-DE.hhc
+Index file=SpiderChart-DE.hhk
+Compatibility=1.1 or later
+Compiled file=SpiderChart-DE.chm
+Display compile progress=Yes
+Full-text search=Yes
+Language=0x407 German (Germany)
+
+[FILES]
+SpiderChart-EN.html
+PoppinsUI-Regular.ttf
+PoppinsUI-Bold.ttf
+
+[INFOTYPES]
