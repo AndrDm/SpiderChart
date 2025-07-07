@@ -85,19 +85,28 @@ pub fn classify_value(value: f64, iqi_type: usize, param: usize) -> usize {
 
 pub fn load_cui_font() {
 	unsafe {
-		let font_path =
+		let font_path_regular =
 			widestring::U16CString::from_str("./fonts/PoppinsUI-Regular.ttf")
 				.unwrap();
-		let fonts_added = AddFontResourceExW(
-			PCWSTR(font_path.as_ptr()),
+		let fonts_added_regular = AddFontResourceExW(
+			PCWSTR(font_path_regular.as_ptr()),
 			FR_PRIVATE,
 			Some(null_mut()),
 		);
 
-		if fonts_added > 0 {
-			println!("Font loaded successfully.");
+		let font_path_bold =
+			widestring::U16CString::from_str("./fonts/PoppinsUI-Bold.ttf")
+				.unwrap();
+		let fonts_added_bold = AddFontResourceExW(
+			PCWSTR(font_path_bold.as_ptr()),
+			FR_PRIVATE,
+			Some(null_mut()),
+		);
+
+		if fonts_added_regular > 0 && fonts_added_bold > 0 {
+			println!("Fonts loaded successfully.");
 		} else {
-			eprintln!("Failed to load font.");
+			eprintln!("Failed to load fonts.");
 		}
 	}
 }
