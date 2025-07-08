@@ -1,10 +1,9 @@
 //==============================================================================
 //
 // Title:		SpiderChart
-// Purpose:		A short description of the application.
+// Purpose:		CVI Project for Spider Chart GUI
 //
-// Created on:	25.06.2025 at 08:57:26 by .
-// Copyright:	. All Rights Reserved.
+// Created on:	25.06.2025 at 08:57:26 by AD.
 //
 //==============================================================================
 
