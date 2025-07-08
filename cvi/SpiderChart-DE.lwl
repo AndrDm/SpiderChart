@@ -6,6 +6,20 @@ CharSet = 0
 [PANEL]
 Flags = "@e"
 
+[PANEL_DETECTOR_GAIN]
+Type = 3
+Flags = "Efef"
+Label = "Verstärkung"
+Tooltip Line0001 = "Verstärkung bezeichnet den Verstärkungsfaktor, der auf das vom Detektor erzeugte"
+Tooltip Line0002 = " Signal angewendet wird, wenn dieser Röntgenphotonen erfasst."
+
+[PANEL_DETECTOR_TIMING]
+Type = 3
+Flags = "Efef"
+Label = "Timing"
+Tooltip Line0001 = "Timing bezieht sich auf die Belichtungszeit, Bildzeit, Bildrate (FPS) oder Integ"
+Tooltip Line0002 = "rationszeit."
+
 [PANEL_DETECTOR_STRING]
 Type = 3
 Flags = "Efee"
@@ -20,27 +34,45 @@ Label = "IQI Typ"
 
 [PANEL_ISRB]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "iSRb, µm"
+Tooltip Line0001 = "Interpolierte Grundauflösung. Misst das kleinste Detail, das der Detektor auflös"
+Tooltip Line0002 = "en kann. Kleinere Werte bedeuten höhere Auflösung."
 
 [PANEL_CSA]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "CSa, %"
+Tooltip Line0001 = "Erreichbare Kontrastempfindlichkeit. Zeigt die Fähigkeit des Detektors, kleine U"
+Tooltip Line0002 = "nterschiede in Materialdicke oder -dichte zu erkennen."
 
 [PANEL_LAG]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "Image Lag, %"
+Tooltip Line0001 = "Bildnachleuchten (Image Lag). Restsignal nach der Röntgenbelichtung. Niedrigere "
+Tooltip Line0002 = "Werte bedeuten schnellere Detektorreaktion."
 
 [PANEL_SNRN]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "SNRn @ 1 mGy"
+Tooltip Line0001 = "Normalisiertes Signal-Rausch-Verhältnis. Beschreibt die Bildklarheit im Verhältn"
+Tooltip Line0002 = "is zum Rauschen, normalisiert auf die räumliche Auflösung."
 
 [PANEL_SMTR]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "SMTR, mm"
+Tooltip Line0001 = "Spezifischer Materialdickenbereich. Bereich der Materialdicken, in dem der Detek"
+Tooltip Line0002 = "tor eine ausreichende Bildqualität liefert."
 
 [PANEL_ISOMTL]
 Type = 2
-Flags = "Dee"
+Flags = "Dff"
+Label = "ISO MTL, mm"
+Tooltip Line0001 = "ISO-Materialdickengrenze. Maximale Materialdicke, bei der der Detektor die ISO-B"
+Tooltip Line0002 = "ildqualitätsanforderungen erfüllt."
 
 [PANEL_THEME]
 Type = 8
@@ -61,23 +93,28 @@ Label = "Beenden"
 
 [PANEL_ISRB_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für interpolierte Grundauflösung."
 
 [PANEL_CSA_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für erreichbare Kontrastempfindlichkeit."
 
 [PANEL_LAG_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für Bildnachleuchten (Lag)."
 
 [PANEL_SNRN_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für das normalisierte Signal-Rausch-Verhältnis."
 
 [PANEL_SMTR_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für den spezifischen Materialdickenbereich."
 
 [PANEL_CANVAS]
 Type = 2
@@ -100,7 +137,8 @@ Label = "__Spider-Chart aus TOML-Datei laden..."
 
 [PANEL_ISOMTL_CLASS]
 Type = 3
-Flags = "Eeee"
+Flags = "Eeef"
+Tooltip = "Qualitätszahl für die ISO-Materialdickengrenze."
 
 [PANEL_LISTBOX]
 Type = 8
@@ -116,9 +154,21 @@ NumItemValues = 0
 Flags = "Efee00"
 Label = "Sprache"
 
+[PANEL_AUTOSCALESWITCH]
+Type = 5
+Flags = "Efff@f"
+Label = "Skalierung"
+On = "Ein"
+Off = "Aus"
+Tooltip Line0001 = "Passen Sie die Skalierung des Spinnennetzdiagramms an, um die kleinste Klasse zu"
+Tooltip Line0002 = " berücksichtigen."
+
 [PANEL_PATTERNSWITCH]
 Type = 5
-Flags = "Eeee@e"
+Flags = "Effe@f"
+Label = "Muster"
+On = "Ein"
+Tooltip = "Muster ähnlich dem ursprünglichen ASTM-2597-Dokument"
 
 [PANEL_TIMER]
 Type = 2
@@ -197,10 +247,6 @@ Flags = "Dee"
 Type = 4
 Flags = "Dfe"
 Default = "Spider-Chart-Diagramm,\nvollständig in der Programmiersprache Rust entwickelt"
-
-[PANELABOUT_HYPERLINK]
-Type = 4
-Flags = "Dee"
 
 [MENUBAR_FILE]
 Flags = "@f"

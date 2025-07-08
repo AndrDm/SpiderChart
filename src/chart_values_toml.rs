@@ -14,6 +14,11 @@ pub struct ChartValuesToml {
 	snrn: f64,
 	smtr: f64,
 	mtl: f64,
+	#[serde(default)]
+	// Default to empty string if not set - nice feature of serde
+	timing: String,
+	#[serde(default)]
+	gain: String,
 }
 
 impl ChartValuesToml {
@@ -27,6 +32,8 @@ impl ChartValuesToml {
 			snrn: 820.0,
 			smtr: 125.0,
 			mtl: 90.0,
+			timing: String::from(""),
+			gain: String::from(""),
 		}
 	}
 
@@ -65,6 +72,8 @@ impl ChartValuesToml {
 		set_ctrl_val_f64(hpanel, PANEL_SNRN, self.snrn);
 		set_ctrl_val_f64(hpanel, PANEL_SMTR, self.smtr);
 		set_ctrl_val_f64(hpanel, PANEL_ISOMTL, self.mtl);
+		set_ctrl_val_str(hpanel, PANEL_DETECTOR_TIMING, &self.timing);
+		set_ctrl_val_str(hpanel, PANEL_DETECTOR_GAIN, &self.gain);
 	}
 
 	pub fn from_controls(hpanel: c_int) -> Self {
@@ -77,13 +86,15 @@ impl ChartValuesToml {
 			snrn: get_numeric_value(hpanel, PANEL_SNRN),
 			smtr: get_numeric_value(hpanel, PANEL_SMTR),
 			mtl: get_numeric_value(hpanel, PANEL_ISOMTL),
+			timing: get_string_value(hpanel, PANEL_DETECTOR_TIMING),
+			gain: get_string_value(hpanel, PANEL_DETECTOR_GAIN),
 		}
 	}
 
 	#[allow(dead_code)]
 	pub fn print(&self) {
 		println!(
-			"TOML values:\n  iqi: {}\n  detector: \"{}\"\n  isrb: {}\n  csa: {}\n  lag: {}\n  snrn: {}\n  smtr: {}\n  mtl: {}",
+			"TOML values:\n  iqi: {}\n  detector: \"{}\"\n  isrb: {}\n  csa: {}\n  lag: {}\n  snrn: {}\n  smtr: {}\n  mtl: {}\n  timing: \"{}\"\n  gain: \"{}\"",
 			self.iqi,
 			self.detector,
 			self.isrb,
@@ -91,7 +102,9 @@ impl ChartValuesToml {
 			self.lag,
 			self.snrn,
 			self.smtr,
-			self.mtl
+			self.mtl,
+			self.timing,
+			self.gain
 		);
 	}
 }

@@ -22,8 +22,46 @@
             <param name="Local" value="SpiderChart-DE.html#darstellung-anpassen">
           </OBJECT>
       <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Skalierung">
+            <param name="Local" value="SpiderChart-DE.html#skalierung">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Timing und Verstärkung (Gain)">
+            <param name="Local" value="SpiderChart-DE.html#timing-und-verstärkung-gain">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
             <param name="Name" value="Qualitätskennzahlen">
             <param name="Local" value="SpiderChart-DE.html#qualitätskennzahlen">
           </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Spinnennetzdiagramm Parameter">
+            <param name="Local" value="SpiderChart-DE.html#spinnennetzdiagramm-parameter">
+          </OBJECT>
+        <UL>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="iSRb Detektor">
+                    <param name="Local" value="SpiderChart-DE.html#isrb-detektor">
+                   </OBJECT>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="CSa">
+                    <param name="Local" value="SpiderChart-DE.html#csa">
+                   </OBJECT>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="Image Lag">
+                    <param name="Local" value="SpiderChart-DE.html#image-lag">
+                   </OBJECT>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="SNRn">
+                    <param name="Local" value="SpiderChart-DE.html#snrn">
+                   </OBJECT>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="SMTR">
+                    <param name="Local" value="SpiderChart-DE.html#smtr">
+                   </OBJECT>
+              <LI> <OBJECT type="text/sitemap">
+                    <param name="Name" value="ISO MTL">
+                    <param name="Local" value="SpiderChart-DE.html#iso-mtl">
+                   </OBJECT>
+        </UL>
 </UL>
 </BODY></HTML>

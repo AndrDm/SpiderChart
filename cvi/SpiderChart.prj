@@ -1,7 +1,7 @@
 [Project Header]
 Version = 2000
 Encoding = "ANSI"
-Pathname Line0001 = "/c/Users/108003658/OneDrive - Baker Hughes/Desktop/SpiderChart/cvi/SpiderCh"
+Pathname Line0001 = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderCh"
 Pathname Line0002 = "art.prj"
 CVI Dir = "/c/program files (x86)/national instruments/cvi2020"
 CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"

@@ -242,6 +242,9 @@ pub extern "C" fn menu_callback(
 				set_ctrl_val_f64(panel, PANEL_SNRN, 820.0);
 				set_ctrl_val_f64(panel, PANEL_SMTR, 125.0);
 				set_ctrl_val_f64(panel, PANEL_ISOMTL, 90.0);
+				set_ctrl_val_str(panel, PANEL_DETECTOR_TIMING, "");
+				set_ctrl_val_str(panel, PANEL_DETECTOR_GAIN, "");
+				set_ctrl_val_i32(panel, PANEL_AUTOSCALESWITCH, 0);
 
 				draw_spider_chart(panel);
 			}
@@ -456,7 +459,15 @@ pub extern "C" fn close_panel_about(
 	_event_data1: c_int,
 	_event_data2: c_int,
 ) -> c_int {
-	if event == EVENT_CLOSE as i32 {}
+	if event == EVENT_CLOSE as i32 {
+		unsafe {
+			QueueUserEvent(
+				1000,
+				PANELABOUT as i32,
+				PANELABOUT_CLOSEABOUT as i32,
+			);
+		}
+	}
 	0
 }
 

@@ -12,6 +12,57 @@ use std::{ffi::CString, os::raw::c_int};
 // DRAW
 //
 pub fn draw_spider_chart(hpanel: c_int) {
+	// Translate the values to class 0 to 25
+	let iqi_type = get_numeric_value_i32(hpanel, PANEL_IQI_TYPE);
+
+	let isrb = get_numeric_value(hpanel, PANEL_ISRB);
+	let iso_mtl = get_numeric_value(hpanel, PANEL_ISOMTL);
+	let smtr = get_numeric_value(hpanel, PANEL_SMTR);
+	let snrn = get_numeric_value(hpanel, PANEL_SNRN);
+	let lag = get_numeric_value(hpanel, PANEL_LAG);
+	let csa = get_numeric_value(hpanel, PANEL_CSA);
+
+	let isrb_class = classify_value(isrb, iqi_type as usize, 0); // 0 = ISRB
+	let csa_class = classify_value(csa, iqi_type as usize, 1); // 1 = CSA
+	let lag_class = classify_value(lag, iqi_type as usize, 2); // 2 = LAG
+	let snrn_class = classify_value(snrn, iqi_type as usize, 3); // 3 = SNRN
+	let smtr_class = classify_value(smtr, iqi_type as usize, 4); // 4 = SMTR
+	let iso_mtl_class = classify_value(iso_mtl, iqi_type as usize, 5); // 5 = ISO_MTL
+
+	// Set control values as strings
+	set_ctrl_val_str(hpanel, PANEL_ISRB_CLASS, &isrb_class.to_string());
+	set_ctrl_val_str(hpanel, PANEL_CSA_CLASS, &csa_class.to_string());
+	set_ctrl_val_str(hpanel, PANEL_LAG_CLASS, &lag_class.to_string());
+	set_ctrl_val_str(hpanel, PANEL_SNRN_CLASS, &snrn_class.to_string());
+	set_ctrl_val_str(hpanel, PANEL_SMTR_CLASS, &smtr_class.to_string());
+	set_ctrl_val_str(hpanel, PANEL_ISOMTL_CLASS, &iso_mtl_class.to_string());
+
+	let classes: [usize; 6] = [
+		isrb_class,
+		csa_class,
+		lag_class,
+		snrn_class,
+		smtr_class,
+		iso_mtl_class,
+	];
+
+	fn round_up_to_nearest(value: usize) -> usize {
+		for &threshold in &[10, 15, 20, 25] {
+			if value <= threshold {
+				return threshold;
+			}
+		}
+		value // If value > 25, return as is or handle differently
+	}
+
+	let max_value = *classes.iter().max().unwrap();
+	let auto_scale = get_numeric_value_i32(hpanel, PANEL_AUTOSCALESWITCH);
+
+	let rounded_max =
+		if auto_scale == 1 { round_up_to_nearest(max_value) } else { 25 };
+
+	let max_value = rounded_max as f64; // Use the rounded max value
+
 	fn hex_corners(center_x: f64, center_y: f64, size: f64) -> [(f64, f64); 6] {
 		let mut corners = [(0.0, 0.0); 6];
 		for i in 0..6 {
@@ -158,43 +209,8 @@ pub fn draw_spider_chart(hpanel: c_int) {
 		rotated
 	}
 
-	// Translate the values to class 0 to 25
-	let iqi_type = get_numeric_value_i32(hpanel, PANEL_IQI_TYPE);
-
-	let isrb = get_numeric_value(hpanel, PANEL_ISRB);
-	let iso_mtl = get_numeric_value(hpanel, PANEL_ISOMTL);
-	let smtr = get_numeric_value(hpanel, PANEL_SMTR);
-	let snrn = get_numeric_value(hpanel, PANEL_SNRN);
-	let lag = get_numeric_value(hpanel, PANEL_LAG);
-	let csa = get_numeric_value(hpanel, PANEL_CSA);
-
-	let isrb_class = classify_value(isrb, iqi_type as usize, 0); // 0 = ISRB
-	let csa_class = classify_value(csa, iqi_type as usize, 1); // 1 = CSA
-	let lag_class = classify_value(lag, iqi_type as usize, 2); // 2 = LAG
-	let snrn_class = classify_value(snrn, iqi_type as usize, 3); // 3 = SNRN
-	let smtr_class = classify_value(smtr, iqi_type as usize, 4); // 4 = SMTR
-	let iso_mtl_class = classify_value(iso_mtl, iqi_type as usize, 5); // 5 = ISO_MTL
-
-	// Set control values as strings
-	set_ctrl_val_str(hpanel, PANEL_ISRB_CLASS, &isrb_class.to_string());
-	set_ctrl_val_str(hpanel, PANEL_CSA_CLASS, &csa_class.to_string());
-	set_ctrl_val_str(hpanel, PANEL_LAG_CLASS, &lag_class.to_string());
-	set_ctrl_val_str(hpanel, PANEL_SNRN_CLASS, &snrn_class.to_string());
-	set_ctrl_val_str(hpanel, PANEL_SMTR_CLASS, &smtr_class.to_string());
-	set_ctrl_val_str(hpanel, PANEL_ISOMTL_CLASS, &iso_mtl_class.to_string());
-
-	let classes: [usize; 6] = [
-		isrb_class,
-		csa_class,
-		lag_class,
-		snrn_class,
-		smtr_class,
-		iso_mtl_class,
-	];
-
 	let rotated = rotate_left(classes, 2); // rotate 2 times, our iSRb is  topmost
 
-	let max_value = 25.0;
 	let max_radius = 250.0; // half of 500 pixels
 
 	// Center of the canvas
@@ -360,8 +376,16 @@ pub fn draw_spider_chart(hpanel: c_int) {
 
 	let radii = [0, 50, 100, 150, 200, 250];
 
+	let divider = match rounded_max {
+		25 => 10,
+		20 => 12,
+		15 => 16,
+		10 => 25,
+		_ => 25, // Default fallback
+	};
+
 	for &r in &radii {
-		let label = CString::new(format!("{}", r / 10)).unwrap();
+		let label = CString::new(format!("{}", r / divider)).unwrap();
 
 		// Define a small rectangle around the label position
 		let rect = Rect {
@@ -690,4 +714,35 @@ pub fn draw_spider_chart(hpanel: c_int) {
 		Rect { left: 640, top: 10, height: 36, width: 300 },
 		VAL_CENTER_RIGHT,
 	);
+
+	let timing_str = get_string_value(hpanel, PANEL_DETECTOR_TIMING);
+	if !timing_str.trim().is_empty() {
+		let timing_text = format!("Timing: {}", timing_str);
+		canvas_draw_text(
+			hpanel,
+			PANEL_CANVAS,
+			CString::new(timing_text).unwrap().as_ptr(),
+			font_name.as_ptr(),
+			Rect { left: 20, top: 660, height: 36, width: canvas_width / 2 },
+			VAL_CENTER_LEFT,
+		);
+	}
+
+	let gain_str = get_string_value(hpanel, PANEL_DETECTOR_GAIN);
+	if !gain_str.trim().is_empty() {
+		let gain_text = format!("Gain: {}", gain_str);
+		canvas_draw_text(
+			hpanel,
+			PANEL_CANVAS,
+			CString::new(gain_text).unwrap().as_ptr(),
+			font_name.as_ptr(),
+			Rect {
+				left: canvas_width / 2,
+				top: 660,
+				height: 36,
+				width: canvas_width / 2,
+			},
+			VAL_CENTER_RIGHT,
+		);
+	}
 }

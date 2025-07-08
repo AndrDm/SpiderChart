@@ -20,6 +20,9 @@ pub struct ChartValues {
 	theme: i32,
 	language: i32,
 	pattern: i32,
+	timing: String,
+	gain: String,
+	auto_scale: i32,
 }
 
 impl ChartValues {
@@ -36,6 +39,9 @@ impl ChartValues {
 			theme: 0,
 			language: 0,
 			pattern: 1,
+			timing: String::from(""),
+			gain: String::from(""),
+			auto_scale: 0, // Default to auto scale disabled
 		}
 	}
 
@@ -60,8 +66,10 @@ impl ChartValues {
 						.set("mtl", defaults.mtl.to_string())
 						.set("theme", defaults.theme.to_string())
 						.set("language", defaults.language.to_string())
-						.set("pattern", defaults.pattern.to_string());
-					// Optionally, you could overwrite the invalid file here
+						.set("pattern", defaults.pattern.to_string())
+						.set("timing", defaults.timing.clone())
+						.set("gain", defaults.gain.clone())
+						.set("auto_scale", defaults.auto_scale.to_string());
 					// ini.write_to_file(path).unwrap();
 					ini
 				}
@@ -81,7 +89,10 @@ impl ChartValues {
 				.set("mtl", defaults.mtl.to_string())
 				.set("theme", defaults.theme.to_string())
 				.set("pattern", defaults.pattern.to_string())
-				.set("language", defaults.language.to_string());
+				.set("language", defaults.language.to_string())
+				.set("timing", defaults.timing.clone())
+				.set("gain", defaults.gain.clone())
+				.set("auto_scale", defaults.auto_scale.to_string());
 			ini.write_to_file(path).unwrap();
 			ini
 		};
@@ -101,7 +112,10 @@ impl ChartValues {
 				.set("mtl", defaults.mtl.to_string())
 				.set("theme", defaults.theme.to_string())
 				.set("language", defaults.language.to_string())
-				.set("pattern", defaults.pattern.to_string());
+				.set("pattern", defaults.pattern.to_string())
+				.set("timing", defaults.timing.clone())
+				.set("gain", defaults.gain.clone())
+				.set("auto_scale", defaults.auto_scale.to_string());
 		}
 
 		// Now, get the section for reading
@@ -144,6 +158,11 @@ impl ChartValues {
 			pattern: get("pattern", &defaults.pattern.to_string())
 				.parse()
 				.unwrap_or(defaults.pattern),
+			timing: get("timing", &defaults.timing).clone(),
+			gain: get("gain", &defaults.gain).clone(),
+			auto_scale: get("auto_scale", &defaults.auto_scale.to_string())
+				.parse()
+				.unwrap_or(defaults.auto_scale),
 		};
 		(values, conf)
 	}
@@ -161,7 +180,10 @@ impl ChartValues {
 			.set("mtl", self.mtl.to_string())
 			.set("theme", self.theme.to_string())
 			.set("language", self.language.to_string())
-			.set("pattern", self.pattern.to_string());
+			.set("pattern", self.pattern.to_string())
+			.set("timing", self.timing.clone())
+			.set("gain", self.gain.clone())
+			.set("auto_scale", self.auto_scale.to_string());
 		conf.write_to_file(path).unwrap();
 	}
 
@@ -178,6 +200,9 @@ impl ChartValues {
 		set_ctrl_val_i32(hpanel, PANEL_THEME, self.theme);
 		set_ctrl_val_i32(hpanel, PANEL_LANG, self.language);
 		set_ctrl_val_i32(hpanel, PANEL_PATTERNSWITCH, self.pattern);
+		set_ctrl_val_str(hpanel, PANEL_DETECTOR_TIMING, &self.timing);
+		set_ctrl_val_str(hpanel, PANEL_DETECTOR_GAIN, &self.gain);
+		set_ctrl_val_i32(hpanel, PANEL_AUTOSCALESWITCH, self.auto_scale);
 	}
 
 	/// Get all values from controls
@@ -194,12 +219,15 @@ impl ChartValues {
 			theme: get_numeric_value_i32(hpanel, PANEL_THEME),
 			language: get_numeric_value_i32(hpanel, PANEL_LANG),
 			pattern: get_numeric_value_i32(hpanel, PANEL_PATTERNSWITCH),
+			timing: get_string_value(hpanel, PANEL_DETECTOR_TIMING),
+			gain: get_string_value(hpanel, PANEL_DETECTOR_GAIN),
+			auto_scale: get_numeric_value_i32(hpanel, PANEL_AUTOSCALESWITCH),
 		}
 	}
 
 	pub fn print(&self) {
 		println!(
-			"INI values:\n  iqi: {}\n  detector: \"{}\"\n  isrb: {}\n  csa: {}\n  lag: {}\n  snrn: {}\n  smtr: {}\n  mtl: {} \n  theme: {}\n  language: {}\n  pattern: {}",
+			"INI values:\n  iqi: {}\n  detector: \"{}\"\n  isrb: {}\n  csa: {}\n  lag: {}\n  snrn: {}\n  smtr: {}\n  mtl: {} \n  theme: {}\n  language: {}\n  pattern: {} \n  timing: \"{}\"\n  gain: \"{}\"\n  auto_scale: {}",
 			self.iqi,
 			self.detector,
 			self.isrb,
@@ -210,7 +238,10 @@ impl ChartValues {
 			self.mtl,
 			self.theme,
 			self.language,
-			self.pattern
+			self.pattern,
+			self.timing,
+			self.gain,
+			self.auto_scale
 		);
 	}
 }
