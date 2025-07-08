@@ -13,7 +13,7 @@ cargo build -r
 ### Dependencies
 
 ```toml
-text[dependencies]
+[dependencies]
 hide_console = "0.2"
 rfd = "0.15.3" # File Dialogs
 rust-ini = "0.21.1"
