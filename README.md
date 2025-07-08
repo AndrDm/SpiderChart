@@ -4,7 +4,17 @@ An ASTM E2597 spider chart diagram implemented entirely in the Rust programming 
 
 ![](hlp/assets/Screenshot_2025-07-08_19.38.37.png)
 
-## Build
+## How to run
+
+Just download the [latest release](https://github.com/AndrDm/SpiderChart/releases/download/v.0.2.0/SpiderChart-0_2_0.zip), unpack it with all subfolders, and run the application. This is a tiny portable open source application — no installation or administrator privileges are required:
+
+![](hlp/assets/Screenshot_2025-07-08_20.38.24.png)
+
+If no help appears, just unlock both the German and English help files. They are located in the \bin subfolder:
+
+![](hlp/assets/Screenshot_2025-07-08_20.39.55.png)
+
+## How to Build
 
 ```bash
 cargo build -r
