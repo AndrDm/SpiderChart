@@ -14,6 +14,8 @@ If no help appears, just unlock both the German and English help files. They are
 
 ![](hlp/assets/Screenshot_2025-07-08_20.39.55.png)
 
+If you prefer to build your own executable, then you will need to [install 64-bit Rust](https://www.rust-lang.org/tools/install) (v.1.88.0 was used).
+
 ## How to Build
 
 ```bash
