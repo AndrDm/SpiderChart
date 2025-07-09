@@ -37,21 +37,60 @@ impl ChartValuesToml {
 		}
 	}
 
+	pub fn iqi(&self) -> i32 {
+		self.iqi
+	}
+	//pub fn detector(&self) -> &str {
+	//	&self.detector
+	//}
+	pub fn isrb(&self) -> f64 {
+		self.isrb
+	}
+	pub fn csa(&self) -> f64 {
+		self.csa
+	}
+	pub fn lag(&self) -> f64 {
+		self.lag
+	}
+	pub fn snrn(&self) -> f64 {
+		self.snrn
+	}
+	pub fn smtr(&self) -> f64 {
+		self.smtr
+	}
+	pub fn mtl(&self) -> f64 {
+		self.mtl
+	}
+	/*
+	pub fn timing(&self) -> &str {
+		&self.timing
+	}
+	pub fn gain(&self) -> &str {
+		&self.gain
+	}
+	*/
+
 	pub fn load_from_toml(path: &str) -> Self {
 		if Path::new(path).exists() {
 			match fs::read_to_string(path) {
 				Ok(content) => toml::from_str(&content).unwrap_or_else(|_| {
+					println!("OK to parse TOML from {}.", path);
 					let defaults = Self::defaults();
 					//defaults.save_to_toml(path);
 					defaults
 				}),
 				Err(_) => {
+					println!(
+						"Failed to read from {}. Using default values.",
+						path
+					);
 					let defaults = Self::defaults();
 					//defaults.save_to_toml(path);
 					defaults
 				}
 			}
 		} else {
+			println!("File {} does not exist. Using default values.", path);
 			let defaults = Self::defaults();
 			//defaults.save_to_toml(path);
 			defaults

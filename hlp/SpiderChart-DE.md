@@ -71,6 +71,20 @@ Auch wenn es nicht unbedingt erforderlich ist, wird empfohlen, das verwendete Ti
 
 ![image-20250708093925855](assets/image-20250708093925855.png)
 
+### Vergleichsmodus
+
+Im Vergleichsmodus können Sie bis zu vier Detektoren aus den Favoriten vergleichen:
+
+![image-20250709161734863](assets/image-20250709161734863.png)
+
+In diesem Modus sind nur **Auto-Skalierung** und **Design/Thema** verfügbar. Anschließend können Sie das Diagramm als PNG-Datei exportieren, ausdrucken oder in die Zwischenablage kopieren.
+
+### Zeichnen
+
+Sie können Ihre eigenen Notizen direkt mit der Maus auf das Diagramm zeichnen:
+
+![](assets/image-20250709161334541.png)
+
 ### Qualitätskennzahlen
 
 Sie können die Qualitätskennzahlen über das Hilfemenü einsehen:

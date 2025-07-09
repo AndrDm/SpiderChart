@@ -174,10 +174,10 @@ pub fn populate_listbox_with_toml_files(panel_handle: i32, list_box_ctrl: u32) {
 					{
 						let c_string = CString::new(file_name).unwrap();
 						unsafe {
-							println!(
-								"Inserting item: {}",
-								c_string.to_string_lossy()
-							);
+							//println!(
+							//	"Inserting item: {}",
+							//	c_string.to_string_lossy()
+							//);
 							InsertListItemAnsi(
 								panel_handle,
 								list_box_ctrl as i32,

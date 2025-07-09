@@ -1,6 +1,6 @@
 [Workspace Header]
 Version = 2000
-Pathname = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.cws"
+Pathname = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.cws"
 CVI Dir = "/c/program files (x86)/national instruments/cvi2020"
 CVI Shared Dir = "/C/Program Files (x86)/National Instruments/Shared/CVI"
 CVI Pub Local Dir = "/C/ProgramData/National Instruments/CVI2020"
@@ -12,12 +12,12 @@ VXIplug&play Framework 64-bit Dir = "/C/Program Files/IVI Foundation/VISA/win64"
 Number of Projects = 1
 Active Project = 1
 Project 0001 = "SpiderChart.prj"
-Drag Bar Left = 180
-Window Top = 73
-Window Left = 107
-Window Bottom = 1419
-Window Right = 1470
-Maximized = True
+Drag Bar Left = 194
+Window Top = 74
+Window Left = 40
+Window Bottom = 1420
+Window Right = 1403
+Maximized = False
 Maximized Children = True
 Max32 Number Of Errors = 20
 Track Include File Dependencies = True
@@ -32,7 +32,7 @@ Break At First Statement = False
 Sort Type = "File Name"
 Number of Opened Files = 2
 Window Confinement Region Enabled = True
-MainColumnWidth = 163
+MainColumnWidth = 177
 FileDateColumnWidth = 70
 FileSizeColumnWidth = 70
 
@@ -46,9 +46,9 @@ Batch Build Release = False
 Batch Build Debug = False
 
 [File 0001]
-Path = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.uir"
+Path = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.uir"
 File Type = "User Interface Resource"
-Disk Date = 3834840666
+Disk Date = 3834913890
 In Projects = "1,"
 Window Top = 33
 Window Left = 10
@@ -57,39 +57,39 @@ Window Width = 769
 Window Z-Order = 1
 
 [File 0002]
-Path = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.c"
+Path = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.c"
 File Type = "CSource"
-Disk Date = 3834754066
+Disk Date = 3834891727
 In Projects = "1,"
-Source Window State = "1,193,193,193,0,0,0,0,0,0,0,0,0,0,0,0,133,0,193,0,453,769,1,0,"
-Window Top = 64
-Window Left = 26
+Source Window State = "1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,453,1048,1,0,"
+Window Top = 33
+Window Left = 10
 Window Z-Order = 2
 
 [File 0003]
-Path = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.h"
+Path = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.h"
 File Type = "Include"
-Disk Date = 3834754066
+Disk Date = 3834913337
 In Projects = "1,"
 Source Window State = "1,61,61,61,9,27,9,0,3,0,0,0,0,0,0,0,0,0,61,27,401,602,1,0,"
 Window Top = 95
 Window Left = 42
 
 [File 0004]
-Path = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart-DE.lwl"
+Path = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart-DE.lwl"
 File Type = "Unknown"
-Disk Date = 3834840666
+Disk Date = 3834891727
 In Projects = "1,"
 
 [File 0005]
-Path = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart-EN.lwl"
+Path = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart-EN.lwl"
 File Type = "Unknown"
-Disk Date = 3834840666
+Disk Date = 3834891727
 In Projects = "1,"
 
 [Tab Order]
-Tab 0001 = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.c"
-Tab 0002 = "/c/Users/Andrey/Desktop/SpiderChart-Dev4/cvi/SpiderChart.uir"
+Tab 0001 = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.c"
+Tab 0002 = "/c/Users/Andrey/Desktop/SpiderChart/cvi/SpiderChart.uir"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

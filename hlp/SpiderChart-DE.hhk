@@ -30,6 +30,14 @@
             <param name="Local" value="SpiderChart-DE.html#timing-und-verstärkung-gain">
           </OBJECT>
       <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Vergleichsmodus">
+            <param name="Local" value="SpiderChart-DE.html#vergleichsmodus">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Zeichnen">
+            <param name="Local" value="SpiderChart-DE.html#zeichnen">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
             <param name="Name" value="Qualitätskennzahlen">
             <param name="Local" value="SpiderChart-DE.html#qualitätskennzahlen">
           </OBJECT>

@@ -271,6 +271,13 @@ pub extern "C" fn menu_callback(
 				return;
 			}
 			change_language();
+			let version = env!("CARGO_PKG_VERSION");
+			let version_str = format!("v.{}", version);
+			set_ctrl_val_str(
+				PANELABOUT as i32,
+				PANELABOUT_ABOUTVER,
+				&version_str,
+			);
 			// display_panel(g_habout_panel); // this works, but not modal
 			unsafe {
 				// NI CVI Recommended way to display a panel
@@ -537,13 +544,9 @@ pub extern "C" fn listbox_callback(
 	// https://www.ni.com/docs/de-DE/bundle/labwindows-cvi/page/cvi/uiref/cviprogramming_with_list_box_controls.htm
 
 	if event == EVENT_COMMIT as i32 {
-		println!("Listbox callback triggered");
-
 		let selected_file = get_string_value(panel, PANEL_LISTBOX);
 
 		if !selected_file.is_empty() {
-			println!("Selected line: {}", selected_file);
-
 			// Prepend "favorites" subfolder
 			let path_buf = PathBuf::from("favorites").join(selected_file);
 
@@ -561,6 +564,64 @@ pub extern "C" fn listbox_callback(
 
 	if event == EVENT_CLOSE as i32 {
 		load_from_toml(panel);
+	}
+	0
+}
+
+#[unsafe(no_mangle)]
+pub extern "C" fn on_compare_callback(
+	panel: c_int,
+	_control: c_int,
+	event: c_int,
+	_callback_data: *mut c_void,
+	_event_data1: c_int,
+	_event_data2: c_int,
+) -> c_int {
+	if event == EVENT_COMMIT as i32 {
+		let compare = get_numeric_value_i32(panel, PANEL_COMPARESWITCH);
+		set_attribute_u32(
+			panel,
+			PANEL_LISTBOX,
+			ATTR_CHECK_MODE,
+			compare as u32,
+		);
+
+		let dim_controls = [
+			PANEL_DETECTOR_STRING,
+			PANEL_IQI_TYPE,
+			PANEL_DETECTOR_TIMING,
+			PANEL_DETECTOR_GAIN,
+			PANEL_ISRB,
+			PANEL_CSA,
+			PANEL_LAG,
+			PANEL_ISRB_CLASS,
+			PANEL_CSA_CLASS,
+			PANEL_LAG_CLASS,
+			PANEL_SNRN,
+			PANEL_SMTR,
+			PANEL_ISOMTL,
+			PANEL_SNRN_CLASS,
+			PANEL_SMTR_CLASS,
+			PANEL_ISOMTL_CLASS,
+			PANEL_SAVE_AS_BUTTON,
+			PANEL_LOAD_BUTTON,
+			PANEL_PATTERNSWITCH,
+		];
+
+		let menu_items = [
+			(MENUBAR_FILE, MENUBAR_FILE_OPEN),
+			(MENUBAR_FILE, MENUBAR_FILE_SAVE),
+			(MENUBAR_EDIT, MENUBAR_EDIT_RESET),
+		];
+
+		for &ctrl in &dim_controls {
+			set_attribute_u32(panel, ctrl, ATTR_DIMMED, compare as u32);
+		}
+		for &(menu_bar, item) in &menu_items {
+			set_menu_bar_attribute(menu_bar, item, ATTR_DIMMED, compare as u32);
+		}
+
+		draw_spider_chart(panel);
 	}
 	0
 }

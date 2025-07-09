@@ -426,6 +426,22 @@ pub fn get_text_display_size(
 	}
 }
 
+pub fn set_menu_bar_attribute(
+	menu_bar: u32,
+	menu_item: u32,
+	attribute: u32,
+	value: u32,
+) {
+	unsafe {
+		SetMenuBarAttributeAnsi(
+			menu_bar as i32,
+			menu_item as i32,
+			attribute as i32,
+			value as i32,
+		);
+	}
+}
+
 //==============================================================================
 // From toolbox.h
 unsafe extern "C" {

@@ -137,9 +137,9 @@ Flags = "Eeee"
 
 [PANEL_LISTBOX]
 Type = 8
-NumItemLabels = 0
-NumItemValues = 0
-Flags = "@f0"
+NumItemLabels = 3
+NumItemValues = 3
+Flags = "Af0eEeee@e0"
 Label = "Favorites"
 
 [PANEL_LANG]
@@ -156,6 +156,14 @@ Label = "Auto Scale"
 On = "On"
 Off = "Off"
 Tooltip = "Adjust the spider chart scale to accommodate the smallest class."
+
+[PANEL_COMPARESWITCH]
+Type = 5
+Flags = "Efff@f"
+Label = "Compare Mode"
+On = "On"
+Off = "Off"
+Tooltip = "Perform comparison of two or more detectors."
 
 [PANEL_PATTERNSWITCH]
 Type = 5
@@ -187,6 +195,11 @@ Default = "Save Spider Chart As TOML File..."
 Type = 4
 Flags = "Dfe"
 Default = "Load Spider Chart from TOML File..."
+
+[PANEL_SELECTMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Please select at least two Detectors to compare"
 
 [PANEL_EXPORTPNGMSG]
 Type = 4

@@ -38,14 +38,16 @@
 #define  PANEL_LISTBOX                    24      /* control type: listBox, callback function: listbox_callback */
 #define  PANEL_LANG                       25      /* control type: pictRing, callback function: on_lang_change_callback */
 #define  PANEL_AUTOSCALESWITCH            26      /* control type: binary, callback function: on_change_callback */
-#define  PANEL_PATTERNSWITCH              27      /* control type: binary, callback function: on_change_callback */
-#define  PANEL_TIMER                      28      /* control type: timer, callback function: draw_to_canvas */
-#define  PANEL_RESETTEXTMSG               29      /* control type: textMsg, callback function: (none) */
-#define  PANEL_RESETTITLEMSG              30      /* control type: textMsg, callback function: (none) */
-#define  PANEL_SAVETOMLMSG                31      /* control type: textMsg, callback function: (none) */
-#define  PANEL_LOADTOMLMSG                32      /* control type: textMsg, callback function: (none) */
-#define  PANEL_EXPORTPNGMSG               33      /* control type: textMsg, callback function: (none) */
-#define  PANEL_AD                         34      /* control type: textMsg, callback function: (none) */
+#define  PANEL_COMPARESWITCH              27      /* control type: binary, callback function: on_compare_callback */
+#define  PANEL_PATTERNSWITCH              28      /* control type: binary, callback function: on_change_callback */
+#define  PANEL_TIMER                      29      /* control type: timer, callback function: draw_to_canvas */
+#define  PANEL_RESETTEXTMSG               30      /* control type: textMsg, callback function: (none) */
+#define  PANEL_RESETTITLEMSG              31      /* control type: textMsg, callback function: (none) */
+#define  PANEL_SAVETOMLMSG                32      /* control type: textMsg, callback function: (none) */
+#define  PANEL_LOADTOMLMSG                33      /* control type: textMsg, callback function: (none) */
+#define  PANEL_SELECTMSG                  34      /* control type: textMsg, callback function: (none) */
+#define  PANEL_EXPORTPNGMSG               35      /* control type: textMsg, callback function: (none) */
+#define  PANEL_AD                         36      /* control type: textMsg, callback function: (none) */
 
 #define  PANEL_2                          2       /* callback function: quality_numbers_panel_callback */
 #define  PANEL_2_TABLE                    2       /* control type: table, callback function: (none) */
@@ -54,7 +56,8 @@
 #define  PANELABOUT                       3       /* callback function: close_panel_about */
 #define  PANELABOUT_CLOSEABOUT            2       /* control type: command, callback function: close_about */
 #define  PANELABOUT_PICTURE               3       /* control type: picture, callback function: (none) */
-#define  PANELABOUT_ABOUTMSG              4       /* control type: textMsg, callback function: (none) */
+#define  PANELABOUT_ABOUTVER              4       /* control type: textMsg, callback function: (none) */
+#define  PANELABOUT_ABOUTMSG              5       /* control type: textMsg, callback function: (none) */
 
 
      /* Control Arrays: */

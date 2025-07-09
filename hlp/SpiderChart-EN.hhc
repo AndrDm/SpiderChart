@@ -38,6 +38,14 @@
             <param name="Local" value="SpiderChart-EN.html#timing-and-gain">
           </OBJECT>
       <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Compare Mode">
+            <param name="Local" value="SpiderChart-EN.html#compare-mode">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Drawing">
+            <param name="Local" value="SpiderChart-EN.html#drawing">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
             <param name="Name" value="Quality Numbers">
             <param name="Local" value="SpiderChart-EN.html#quality-numbers">
           </OBJECT>

@@ -71,6 +71,20 @@ Although it is not strictly necessary, it is recommended to note the Timing and 
 
 ![image-20250708095859411](assets/image-20250708095859411.png)
 
+### Compare Mode
+
+In Compare Mode you can compare up to four Detectors from Favorites:
+
+![image-20250709161108085](assets/image-20250709161108085.png)
+
+The only Auto Scale and Theme are available in this Mode. Then you can export Diagram to PNG File print it or copy to the Clipboard.
+
+### Drawing
+
+ You can draw your own notes directly on the diagram with Mouse:
+
+![image-20250709161334541](assets/image-20250709161334541.png)
+
 ### Quality Numbers
 
 You can see Quality Numbers from Help Menu:

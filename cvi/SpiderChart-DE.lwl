@@ -142,9 +142,9 @@ Tooltip = "Qualitätszahl für die ISO-Materialdickengrenze."
 
 [PANEL_LISTBOX]
 Type = 8
-NumItemLabels = 0
-NumItemValues = 0
-Flags = "@f0"
+NumItemLabels = 3
+NumItemValues = 3
+Flags = "Af0eEeee@e0"
 Label = "Favoriten"
 
 [PANEL_LANG]
@@ -162,6 +162,14 @@ On = "Ein"
 Off = "Aus"
 Tooltip Line0001 = "Passen Sie die Skalierung des Spinnennetzdiagramms an, um die kleinste Klasse zu"
 Tooltip Line0002 = " berücksichtigen."
+
+[PANEL_COMPARESWITCH]
+Type = 5
+Flags = "Efff@f"
+Label = "Vergleichsmodus"
+On = "Ein"
+Off = "Aus"
+Tooltip = "Führen Sie einen Vergleich von zwei oder mehr Detektoren durch."
 
 [PANEL_PATTERNSWITCH]
 Type = 5
@@ -194,6 +202,11 @@ Default = "Spinnendiagramm als TOML-Datei speichern..."
 Type = 4
 Flags = "Dfe"
 Default = "Spinnendiagramm aus TOML-Datei laden..."
+
+[PANEL_SELECTMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Bitte wählen Sie mindestens zwei Detektoren zum Vergleichen aus."
 
 [PANEL_EXPORTPNGMSG]
 Type = 4
