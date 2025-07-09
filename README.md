@@ -1,6 +1,6 @@
 ## Spider Chart Diagram
 
-An ASTM E2597 spider chart diagram implemented entirely in the Rust programming language.
+An ASTM E2597 spider chart diagram implemented entirely in the Rust programming language (Windows only).
 
 ![](hlp/assets/Screenshot_2025-07-08_19.38.37.png)
 
