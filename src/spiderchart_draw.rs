@@ -46,22 +46,38 @@ pub fn draw_spider_chart(hpanel: c_int) {
 				set_pen_color(hpanel, PANEL_CANVAS, 0x013025); //VAL_BLACK
 			}
 
-			if total_checked == 0 {
-				let font_name = CString::new("Poppins UI").unwrap();
-				create_meta_font(
-					font_name.as_ptr(),
-					font_name.as_ptr(),
-					24, // point size
-					0,  // bold
-					0,  // italic
-					0,  // underline
-					0,  // strikeout
-				);
+			let font_name = CString::new("Poppins UI").unwrap();
+			create_meta_font(
+				font_name.as_ptr(),
+				font_name.as_ptr(),
+				24, // point size
+				0,  // bold
+				0,  // italic
+				0,  // underline
+				0,  // strikeout
+			);
 
+			if total_checked == 0 {
 				canvas_draw_text(
 					hpanel,
 					PANEL_CANVAS,
 					CString::new(get_string_value(hpanel, PANEL_SELECTMSG))
+						.unwrap()
+						.as_ptr(),
+					//CString::new("Top Left").unwrap().as_ptr(),
+					font_name.as_ptr(),
+					Rect { left: 20, top: 325, height: 36, width: 930 }, //630
+					VAL_CENTER,
+				);
+
+				return; // Exit if no items are checked
+			}
+
+			if total_checked > 4 {
+				canvas_draw_text(
+					hpanel,
+					PANEL_CANVAS,
+					CString::new(get_string_value(hpanel, PANEL_TOOMANYMSG))
 						.unwrap()
 						.as_ptr(),
 					//CString::new("Top Left").unwrap().as_ptr(),
@@ -1133,10 +1149,10 @@ pub fn draw_spider_chart_compare(
 
 	let poly_color = match index {
 		0 => 0x00cc66, // green
-		1 => 0x009fda, // cyan
+		1 => 0xcc0033, // red
 		2 => 0xffcc00, // yellow
 		3 => 0xff6600, // orange
-		_ => 0xcc0033, // red
+		_ => 0x009fda, // cyan
 	};
 
 	set_pen_color(hpanel, PANEL_CANVAS, poly_color); //was spider_color

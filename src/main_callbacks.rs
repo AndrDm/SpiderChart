@@ -36,7 +36,7 @@ pub extern "C" fn on_change_callback(
 
 #[unsafe(no_mangle)]
 pub extern "C" fn on_lang_change_callback(
-	_panel: c_int,
+	panel: c_int,
 	_control: c_int,
 	event: c_int,
 	_callback_data: *mut c_void,
@@ -46,6 +46,7 @@ pub extern "C" fn on_lang_change_callback(
 	if event == EVENT_COMMIT as i32 {
 		reset_menu_bar();
 		change_language();
+		draw_spider_chart(panel); // Redraw the chart to apply language changes
 	}
 	0
 }
@@ -545,8 +546,9 @@ pub extern "C" fn listbox_callback(
 
 	if event == EVENT_COMMIT as i32 {
 		let selected_file = get_string_value(panel, PANEL_LISTBOX);
+		let compare = get_numeric_value_i32(panel, PANEL_COMPARESWITCH);
 
-		if !selected_file.is_empty() {
+		if !selected_file.is_empty() && compare == 0 {
 			// Prepend "favorites" subfolder
 			let path_buf = PathBuf::from("favorites").join(selected_file);
 
@@ -555,16 +557,10 @@ pub extern "C" fn listbox_callback(
 			let values = ChartValuesToml::load_from_toml(&path);
 			values.set_controls(panel);
 			draw_spider_chart(panel);
-
-			// You can now use `selected_string` to fetch the item or trigger logic
-		} else {
-			eprintln!("Failed to get selected value from ListBox");
 		}
+		draw_spider_chart(panel);
 	}
 
-	if event == EVENT_CLOSE as i32 {
-		load_from_toml(panel);
-	}
 	0
 }
 

@@ -14,16 +14,16 @@
      /* Panels and Controls: */
 
 #define  PANEL                            1       /* callback function: main_panel_callback */
-#define  PANEL_DETECTOR_GAIN              2       /* control type: string, callback function: on_change_callback */
+#define  PANEL_DETECTOR_STRING            2       /* control type: string, callback function: on_change_callback */
 #define  PANEL_DETECTOR_TIMING            3       /* control type: string, callback function: on_change_callback */
-#define  PANEL_DETECTOR_STRING            4       /* control type: string, callback function: on_change_callback */
-#define  PANEL_IQI_TYPE                   5       /* control type: ring, callback function: on_change_callback */
-#define  PANEL_ISRB                       6       /* control type: numeric, callback function: on_change_callback */
-#define  PANEL_CSA                        7       /* control type: numeric, callback function: on_change_callback */
-#define  PANEL_LAG                        8       /* control type: numeric, callback function: on_change_callback */
-#define  PANEL_SNRN                       9       /* control type: numeric, callback function: on_change_callback */
-#define  PANEL_SMTR                       10      /* control type: numeric, callback function: on_change_callback */
-#define  PANEL_ISOMTL                     11      /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_DETECTOR_GAIN              4       /* control type: string, callback function: on_change_callback */
+#define  PANEL_ISRB                       5       /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_CSA                        6       /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_LAG                        7       /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_SNRN                       8       /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_SMTR                       9       /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_ISOMTL                     10      /* control type: numeric, callback function: on_change_callback */
+#define  PANEL_IQI_TYPE                   11      /* control type: ring, callback function: on_change_callback */
 #define  PANEL_THEME                      12      /* control type: ring, callback function: on_change_callback */
 #define  PANEL_QUITBUTTON                 13      /* control type: command, callback function: quit_callback */
 #define  PANEL_ISRB_CLASS                 14      /* control type: string, callback function: (none) */
@@ -46,9 +46,10 @@
 #define  PANEL_RESETTITLEMSG              31      /* control type: textMsg, callback function: (none) */
 #define  PANEL_SAVETOMLMSG                32      /* control type: textMsg, callback function: (none) */
 #define  PANEL_LOADTOMLMSG                33      /* control type: textMsg, callback function: (none) */
-#define  PANEL_SELECTMSG                  34      /* control type: textMsg, callback function: (none) */
-#define  PANEL_EXPORTPNGMSG               35      /* control type: textMsg, callback function: (none) */
-#define  PANEL_AD                         36      /* control type: textMsg, callback function: (none) */
+#define  PANEL_TOOMANYMSG                 34      /* control type: textMsg, callback function: (none) */
+#define  PANEL_SELECTMSG                  35      /* control type: textMsg, callback function: (none) */
+#define  PANEL_EXPORTPNGMSG               36      /* control type: textMsg, callback function: (none) */
+#define  PANEL_AD                         37      /* control type: textMsg, callback function: (none) */
 
 #define  PANEL_2                          2       /* callback function: quality_numbers_panel_callback */
 #define  PANEL_2_TABLE                    2       /* control type: table, callback function: (none) */

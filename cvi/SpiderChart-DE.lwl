@@ -29,8 +29,9 @@ Label = "Detektor"
 Type = 8
 NumItemLabels = 4
 NumItemValues = 0
-Flags = "EfeeEeec"
+Flags = "EffeEeec"
 Label = "IQI Typ"
+Tooltip = "Verschiedene IQI-Materialien."
 
 [PANEL_ISRB]
 Type = 2
@@ -203,6 +204,11 @@ Type = 4
 Flags = "Dfe"
 Default = "Spinnendiagramm aus TOML-Datei laden..."
 
+[PANEL_TOOMANYMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Zu viele Detektoren ausgewählt. Sie können maximal 4 vergleichen."
+
 [PANEL_SELECTMSG]
 Type = 4
 Flags = "Dfe"
@@ -254,6 +260,10 @@ Flags = "Dee"
 
 [PANELABOUT_PICTURE]
 Type = 2
+Flags = "Dee"
+
+[PANELABOUT_ABOUTVER]
+Type = 4
 Flags = "Dee"
 
 [PANELABOUT_ABOUTMSG]

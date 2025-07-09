@@ -196,6 +196,11 @@ Type = 4
 Flags = "Dfe"
 Default = "Load Spider Chart from TOML File..."
 
+[PANEL_TOOMANYMSG]
+Type = 4
+Flags = "Dfe"
+Default = "Too many detectors selected. You can compare a maximum of 4."
+
 [PANEL_SELECTMSG]
 Type = 4
 Flags = "Dfe"
@@ -247,6 +252,10 @@ Flags = "Dee"
 
 [PANELABOUT_PICTURE]
 Type = 2
+Flags = "Dee"
+
+[PANELABOUT_ABOUTVER]
+Type = 4
 Flags = "Dee"
 
 [PANELABOUT_ABOUTMSG]
