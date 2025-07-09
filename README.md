@@ -37,15 +37,15 @@ bindgen = "0.72.0"
 copy_to_output = "2.2"
 ```
 
-## Requirements
+### Requirements for Build
 
-### [Clang](https://rust-lang.github.io/rust-bindgen/requirements.html#clang)
+#### [Clang](https://rust-lang.github.io/rust-bindgen/requirements.html#clang)
 
 `bindgen` leverages `libclang` to preprocess, parse, and type-check C and C++ header files. It is required to build bindings to UI IDs.
 
 Clang 9.0 or greater is required.
 
-####  Installing Clang on Windows
+#####  Installing Clang on Windows
 
 There are two options:
 
@@ -63,6 +63,6 @@ You will also need to set `LIBCLANG_PATH` as an [environment variable](https://w
 pacman -S mingw-w64-x86_64-clang
 ```
 
-### [LabWindows/CVI](https://www.ni.com/en/support/downloads/software-products/download.labwindows-cvi.html)
+#### [LabWindows/CVI](https://www.ni.com/en/support/downloads/software-products/download.labwindows-cvi.html)
 
 To modify the UI, you will need to install LabWindows/CVI.
