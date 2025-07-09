@@ -158,6 +158,17 @@ pub extern "C" fn menu_help_callback(
 	let command: u32 = 0; // Replace with actual command like HH_DISPLAY_TOPIC
 	let data: *mut std::ffi::c_void = ptr::null_mut(); // Or a valid pointer if needed
 
+	// Create the ADS path by appending :Zone.Identifier
+	let ads_path = format!("{}:Zone.Identifier", file);
+
+	match fs::remove_file(&ads_path) {
+		//unlock the file
+		Ok(_) => println!("Zone.Identifier removed, file unblocked."),
+		Err(e) => println!(
+			"Failed to remove (or already removed) Zone.Identifier: {}",
+			e
+		),
+	}
 	show_html_help(file, command, data);
 }
 
