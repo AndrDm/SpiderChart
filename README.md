@@ -6,7 +6,7 @@ An ASTM E2597 spider chart diagram implemented entirely in the Rust programming 
 
 ## How to run
 
-Just download the [latest release](https://github.com/AndrDm/SpiderChart/releases/download/v.0.2.1/SpiderChart-0_2_1.zip), unpack it with all subfolders, and run the SpiderChart.exe application. This is a tiny portable open source application — no installation or administrator privileges are required.
+Just download the [latest release](https://github.com/AndrDm/SpiderChart/releases/download/v.0.3.0/SpiderChart-0_3_0.zip), unpack it with all subfolders, and run the SpiderChart.exe application. This is a tiny portable open source application — no installation or administrator privileges are required.
 
 If you prefer to build your own executable, then you will need to [install 64-bit Rust](https://www.rust-lang.org/tools/install) (v.1.88.0 was used).
 
