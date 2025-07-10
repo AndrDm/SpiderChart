@@ -85,6 +85,14 @@ The only Auto Scale and Theme are available in this Mode. Then you can export Di
 
 ![image-20250709161334541](assets/image-20250709161334541.png)
 
+### Pattern
+
+This switch will turn On/Off decoration pattern on the diagram:
+
+![image-20250710052654770](assets/image-20250710052654770.png)
+
+Turn off if it annoying for you.
+
 ### Quality Numbers
 
 You can see Quality Numbers from Help Menu:
@@ -107,7 +115,7 @@ CSa = \frac{5\%}{CNR(5\%)}
 $$
 where
 $$
-CNR(5\%) = \frac{0.5 \cdot \left[\text{signal(area 1)} + \text{signal(area 3)}\right] - \text{signal(area 2)}}{\sqrt{0.5 \cdot \left[\text{noise(area 1)}^2 + \text{noise(area 3)}^2\right]}}
+CNR(5\%) = \frac{0.5 \cdot \left[signal_{area 1} + signal_{area 3}\right] - signal_{area 2}}{\sqrt{0.5 \cdot \left[(noise_{area 1})^2 + (noise_{area 3})^2\right]}}
 $$
 
 

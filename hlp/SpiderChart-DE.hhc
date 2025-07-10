@@ -42,6 +42,10 @@
             <param name="Local" value="SpiderChart-DE.html#zeichnen">
           </OBJECT>
       <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Muster">
+            <param name="Local" value="SpiderChart-DE.html#muster">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
             <param name="Name" value="Timing und Verstärkung (Gain)">
             <param name="Local" value="SpiderChart-DE.html#timing-und-verstärkung-gain">
           </OBJECT>

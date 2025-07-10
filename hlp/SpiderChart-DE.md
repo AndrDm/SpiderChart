@@ -85,6 +85,14 @@ Sie können Ihre eigenen Notizen direkt mit der Maus auf das Diagramm zeichnen:
 
 ![](assets/image-20250709161334541.png)
 
+### Muster
+
+Diese Schaltfläche schaltet das Dekorationsmuster im Diagramm ein oder aus:
+
+![image-20250710052822092](assets/image-20250710052822092.png)
+
+Schalten Sie es aus, wenn es Sie stört.
+
 ### Qualitätskennzahlen
 
 Sie können die Qualitätskennzahlen über das Hilfemenü einsehen:
@@ -107,7 +115,7 @@ CSa = \frac{5\%}{CNR(5\%)}
 $$
 wobei
 $$
-CNR(5\%) = \frac{0.5 \cdot \left[\text{signal(area 1)} + \text{signal(area 3)}\right] - \text{signal(area 2)}}{\sqrt{0.5 \cdot \left[\text{noise(area 1)}^2 + \text{noise(area 3)}^2\right]}}
+CNR(5\%) = \frac{0.5 \cdot \left[signal_{area 1} + signal_{area 3}\right] - signal_{area 2}}{\sqrt{0.5 \cdot \left[(noise_{area 1})^2 + (noise_{area 3})^2\right]}}
 $$
 
 

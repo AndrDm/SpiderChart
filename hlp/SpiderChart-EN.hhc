@@ -46,6 +46,10 @@
             <param name="Local" value="SpiderChart-EN.html#drawing">
           </OBJECT>
       <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Pattern">
+            <param name="Local" value="SpiderChart-EN.html#pattern">
+          </OBJECT>
+      <LI> <OBJECT type="text/sitemap">
             <param name="Name" value="Quality Numbers">
             <param name="Local" value="SpiderChart-EN.html#quality-numbers">
           </OBJECT>
