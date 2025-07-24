@@ -76,6 +76,7 @@ fn main() -> std::io::Result<()> {
 	let _out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 
 	// Compile the .rc file to .res
+
 	let status = Command::new("windres")
 		.args([
 			"res/SpiderChart.rc",
